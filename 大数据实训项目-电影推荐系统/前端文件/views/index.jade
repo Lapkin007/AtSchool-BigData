@@ -1,0 +1,112 @@
+html
+  head
+    title!=title    
+    meta(charset='utf-8')
+    meta(name='description')
+    meta(name='keywords')
+    meta(name='author')
+    link(rel='shortcut icon', href='http://eduppp.cn/images/logo4.gif')
+    link(rel='apple-touch-icon', href='http://eduppp.cn/images/logo.gif')
+    style
+      include css/index.css
+    style(type='text/css').
+      #frame {/*----------图片轮播相框容器----------*/
+      position: absolute; /*--绝对定位，方便子元素的定位*/
+      width: 1500px;
+      height: 75%;
+      overflow: hidden;/*--相框作用，只显示一个图片---*/
+      border-radius:5px;
+      }
+      #dis {/*--绝对定位方便li图片简介的自动分布定位---*/
+      position: absolute;
+      left: -50px;
+      top: -10px;
+      opacity: 0.5;
+      }
+      #dis li {
+      display: inline-block;
+      width: 200px;
+      height: 20px;
+      margin: 0 650px;
+      float: left;
+      text-align: center;
+      color: #fff;
+      border-radius: 10px;
+      background: #000;
+      }
+      #photos img {
+      float: left;
+      width:1500px;
+      height:75%;
+      }
+      #photos {/*---设置总的图片宽度--通过位移来达到轮播效果----*/
+      position: absolute;z-index:9px;
+      width: calc(1500px * 5);/*---修改图片数量的话需要修改下面的动画参数*/
+      }
+      .play{
+      animation: ma 20s ease-out infinite alternate;/**/
+      }
+      @keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
+      0%,20% {		margin-left: 0px;		}
+      25%,40% {		margin-left: -1500px;	}
+      45%,60% {		margin-left: -3000px;	}
+      65%,80% {		margin-left: -4500px;	}
+      85%,100% {		margin-left: -6000px;	}
+      }
+      .num{
+      position:absolute;z-index:10;
+      display:inline-block;
+      right:10px;top:550px;
+      border-radius:100%;
+      background:#778899;
+      width:50px;height:50px;
+      line-height:50px;
+      cursor:pointer;
+      color:#fff;
+      background-clor:rgba(0,0,0,0.5);
+      text-align:center;
+      opacity:0.8;
+      }
+      .num:hover{background:#000;}
+      .num:hover,#photos:hover{animation-play-state:paused;}
+      .num:nth-child(2){margin-right:60px}
+      .num:nth-child(3){margin-right:120px}
+      .num:nth-child(4){margin-right:180px}
+      .num:nth-child(5){margin-right:240px}
+      #a1:hover ~ #photos{animation: ma1 .5s ease-out forwards;}
+      #a2:hover ~ #photos{animation: ma2 .5s ease-out forwards;}
+      #a3:hover ~ #photos{animation: ma3 .5s ease-out forwards;}
+      #a4:hover ~ #photos{animation: ma4 .5s ease-out forwards;}
+      #a5:hover ~ #photos {animation: ma5 .5s ease-out forwards;}
+      @keyframes ma1 {0%{margin-left:-1200px;}100%{margin-left:-0px;}	}
+      @keyframes ma2 {0%{margin-left:-1200px;}100%{margin-left:-1500px;}	}
+      @keyframes ma3 {100%{margin-left:-3000px;}	}
+      @keyframes ma4 {100%{margin-left:-4500px;}	}
+      @keyframes ma5 {100%{margin-left:-6000px;}	}
+
+
+  body
+    div#navigation 欢迎访问厦门大学数据库实验室电影推荐系统
+      div#logreg
+        input(type='submit',value='登录',onclick="window.location='/loginpage'")
+        input(type='submit', value='注册',onclick="window.location='/registerpage'") 
+    div#mid
+      #frame
+        a#a5.num 5
+        a#a4.num 4
+        a#a3.num 3
+        a#a2.num 2
+        a#a1.num 1
+        #photos.play
+          img(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgss0.baidu.com%2F-vo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F7e3e6709c93d70cfceca21e2f4dcd100baa12b29.jpg&refer=http%3A%2F%2Fgss0.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643800932&t=de849fd4a5db35d66de20a1da1566efc')
+          img(src='http://image.17173.com/bbs/v1/2012/11/14/1352873759491.jpg')
+          img(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190215%2F60b30c3fc7ee4feabb3a212f1e34bca1.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643801030&t=175b715fc1af9d9e20e6dacdd685321d')
+          img(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdesk.fd.zol-img.com.cn%2Fg2%2FM00%2F08%2F01%2FChMlWlWjJIaIcm7vAAaKktonY4cAAHD3gI5O5kABoqq285.jpg&refer=http%3A%2F%2Fdesk.fd.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643801067&t=a66bb9b41995eb445be71c9053c85a74')
+          img(src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.movie.iecity.com%2FUpload%2FMovie%2F201704%2F25%2F20170425102950015.jpg&refer=http%3A%2F%2Fimg.movie.iecity.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643801109&t=28061271990bb90e0e6db4ca274b68a0')
+          ul#dis
+            li 魔戒：霍比特人
+            li 魔境仙踪
+            li 阿凡达
+            li 大圣归来
+            li 拆弹专家
+      

@@ -1,0 +1,17 @@
+html
+  head
+    title!= title
+    style.
+      body{
+        background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-07-19%2F5b5038c2eee88.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643804384&t=3592f3fe84f9a29dfbc69099d6ca1dca);
+      }
+  body
+    h1 亲爱的用户:#{username},猜你喜欢电影:
+    table( cellpadding="5" cellspacing="5")
+         tr
+           -for(var i=0;i<movieinfo.length;i++)
+            td
+              p #{movieinfo[i].moviename}
+              img(src=movieinfo[i].picture)
+            -if((i+1)%5==0)
+             tr

@@ -1,0 +1,29 @@
+html
+  head
+    title!= title
+    style.
+      body{
+        background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-07-19%2F5b5038c2eee88.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643804384&t=3592f3fe84f9a29dfbc69099d6ca1dca);
+      }
+  body
+    h1 热烈欢迎用户: #{username},请您为以下电影打分:
+    form(action='/submituserscore', method='post')
+       input(type='text',style="visibility: hidden;width:0px; height:0px;",name='userid', value=userid)
+       table( cellpadding="5" cellspacing="5")
+         tr
+           -for(var i=0;i<movieforpage.length;i++)
+            td
+              //p 电影名称:#{movieforpage[i].moviename}
+              input(type='text',style="visibility: hidden;width:0px; height:0px;",name='movieid', value=movieforpage[i].movieid)
+              img(src=movieforpage[i].picture)
+              br
+              select(name='moviescore')
+                option(value=1) 1
+                option(value=2) 2
+                option(value=3) 3
+                option(value=4) 4
+                option(value=5) 5
+             -if((i+1)%5==0)
+              tr
+        input(type='submit',value='提交')
+    

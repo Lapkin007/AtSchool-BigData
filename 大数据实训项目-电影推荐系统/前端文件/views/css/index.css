@@ -1,0 +1,75 @@
+body{
+  background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-07-19%2F5b5038c2eee88.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643804384&t=3592f3fe84f9a29dfbc69099d6ca1dca);
+}
+#navigation{
+  background: #888888;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;  
+  margin-bottom:5px;    
+}
+#logreg{
+  float: right;
+  padding-top: 2%;
+  padding-right: 20px;
+  color: #FFF;
+  background-color: rgba(0,0,0,0)
+}
+#mid{
+  padding-top: 50px;
+  height: 75%;
+  width: 1500px;
+  margin: 0 auto;
+}
+#picchange{
+  text-align: center;
+  height: 75%;
+}
+#contain{
+  position: relative;
+  margin: auto;
+  width: 600px;
+  height: 200px;
+  text-align: center;
+  font-family: Arial;
+  color: #FFF;
+  overflow: hidden;
+}
+#contain ul{
+  margin: 10px 0;
+  padding: 0;
+  width: 1800px;
+  transition:all 0.5s;
+}
+#contain li{
+  float: left;
+  width: 600px;
+  height: 200px;
+  list-style: none;
+  line-height: 200px;
+  font-size: 36px;
+}
+#one{
+  background: #9fa8ef;
+}
+#two{
+  background: #ef9fb1;
+}
+
+#three{
+  background: #9fefc3;
+}
+@keyframes marginLeft{
+  0%{margin-left: 0;}
+  28.5%{margin-left: 0;}
+  33.3%{margin-left: -600px;}
+  62%{margin-left: -600px;}
+  66.7%{margin-left: -1200px;}
+  95.2%{margin-left: -1200px;}
+  100%{margin-left: 0;}
+}
+
+#slide-auto{
+  animation:marginLeft 10.5sinfinite;
+}

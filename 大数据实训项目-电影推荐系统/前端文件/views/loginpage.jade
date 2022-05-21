@@ -1,0 +1,33 @@
+html
+  head
+    title!= title
+    style.
+      body{
+        background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-07-19%2F5b5038c2eee88.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643804384&t=3592f3fe84f9a29dfbc69099d6ca1dca);
+      }
+      #log{
+        padding-top: 2px;
+        margin-top: 10%;
+        margin-left: 37%;
+        background: white;
+        width: 25%;
+        height: 40%;
+        text-align: center;
+      }
+  body
+    div#log
+      form(action='/login', method='post')
+        h1 用户登录
+        br
+        span 帐号:
+        input(type='text',name='username')
+        br
+        span 密码:
+        input(type='password',name='pwd')
+        br
+        br
+        input(type='submit',value='登录')
+        br
+        a(href='/registerpage', title='注册') 注册
+        br
+        a(href='/',title='主页') 返回主页
